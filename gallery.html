@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Gallery</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css\base.css">
+    <script>
+        document.createElement("picture");
+    </script>
+    <style>
+        
+
+        /*背景层*/
+        #popLayer {
+            display: none;
+            background-color: #FFFFFF;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 10;
+            -moz-opacity: 0.8;
+            opacity: .80;
+            filter: alpha(opacity=80);
+        }
+
+        /*弹出层*/
+        @media only screen and (min-width: 768px){
+            .popBox {
+            display: none;
+            /* background-color: #FFFFFF; */
+            z-index: 11;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            height: 80%;
+
+            position: fixed;
+            top: 100px;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        }
+
+        @media only screen and (max-width: 768px){
+            .popBox {
+            display: none;
+            /* background-color: #FFFFFF; */
+            z-index: 11;
+            padding-bottom: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+
+            position: fixed;
+            top: 0px;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            margin: auto;
+            }   
+
+        
+        }
+        
+
+        #popBox .close {
+            text-align: right;
+            margin-right: 3%;
+            /* background-color: #F8F8F8; */
+        }
+
+        /*关闭按钮*/
+        #popBox .close a {
+            text-decoration: none;
+            color: #2D2C3B;
+        }
+
+        .popBox-content div{
+            margin: 10px;
+            width: 100%;
+            height: 100%;
+            
+
+        }
+
+        .popBox-content img {
+            max-width: 90%;
+            max-height: 500px;
+        }
+
+        .popBox-content p {
+            font-size: 18px;
+        }
+
+        .popBox-content h4 {
+            margin-top: 10px;
+        }
+
+        .popBox-extend-content{
+            margin-left: 10px; 
+            font-style: italic;
+        }
+
+        /* desktop */
+        @media only screen and (min-width: 1201px) {
+            .grid-container {
+                display: grid;
+                max-width: 1900px;
+                margin-left: auto;
+                margin-right: auto;
+                grid-template-columns: 100%;
+                grid-template-rows: 600px 600px 600px 600px 600px;
+                grid-gap: 10px;
+                /* background-color: lightgrey; */
+                padding: 10px;
+                padding-top: 130px;
+
+                /* border: 5px solid rgba(0, 200, 0, 0.6); */
+                overflow: hidden;
+            }
+
+            .inner-grid-wide {
+                display: grid;
+                grid-template-columns: 100%;
+                /* background-color: lightskyblue; */
+
+                font-size: 300px;
+                text-align: center;
+                /* border: 5px solid rgba(0, 0, 200, 0.6); */
+                overflow: hidden;
+
+            }
+
+            .inner-grid-wide>div {
+                overflow: hidden;
+            }
+
+            .inner-grid-6-4 {
+                display: grid;
+                grid-template-columns: 59.5% 39.5%;
+                grid-column-gap: 1%;
+                /* background-color: lightskyblue; */
+
+                font-size: 300px;
+                text-align: center;
+
+                /* border: 5px solid rgba(0, 0, 200, 0.6); */
+                overflow: hidden;
+            }
+
+            .inner-grid-6-4>div {
+                overflow: hidden;
+            }
+
+            .inner-grid-2-2-8 {
+                display: grid;
+                grid-template-columns: 34.5% 64.5%;
+                grid-row: 49% 49%;
+                grid-gap: 1%;
+                /* background-color: lightskyblue; */
+
+                font-size: 160px;
+                text-align: center;
+
+                /* border: 5px solid rgba(0, 0, 200, 0.6); */
+                overflow: hidden;
+            }
+
+            .inner-grid-2-2-8>div {
+                overflow: hidden;
+            }
+
+            .inner-grid-5-5 {
+                display: grid;
+                grid-template-columns: 49.5% 49.5%;
+                grid-column-gap: 1%;
+                /* background-color: lightskyblue; */
+
+                font-size: 300px;
+                text-align: center;
+
+                /* border: 5px solid rgba(0, 0, 200, 0.6); */
+                overflow: hidden;
+            }
+
+            .inner-grid-5-5>div {
+                overflow: hidden;
+            }
+
+            .grid-item {
+                position: relative;
+                overflow: hidden;
+                height: 600px;
+            }
+
+            .grid-item-s {
+                position: relative;
+                overflow: hidden;
+                height: 300px;
+            }
+
+            .grid-item-wide {
+                width: 1920px;
+                /*图片宽度*/
+                position: absolute;
+                left: 50%;
+                margin-left: -960px;
+                /*图片宽度的一半*/
+            }
+
+            .grid-item-6 {
+                width: 1143px;
+                position: absolute;
+                left: 50%;
+                margin-left: -571px;
+            }
+
+            .grid-item-4 {
+                width: 758px;
+                position: absolute;
+                left: 50%;
+                margin-left: -380px;
+            }
+
+            .grid-item-5 {
+                width: 951px;
+                position: absolute;
+                left: 50%;
+                margin-left: -476px;
+            }
+
+            .grid-item-8 {
+                width: 1239px;
+                position: absolute;
+                left: 50%;
+                margin-left: -620px;
+            }
+
+            .grid-item-2 {
+                width: 663px;
+                position: absolute;
+                left: 50%;
+                margin-left: -332px;
+            }
+
+        }
+
+        /* pad */
+        @media only screen and (min-width: 921px) and (max-width: 1200px) {
+            .grid-container {
+                display: grid;
+                max-width: 1900px;
+                margin-left: auto;
+                margin-right: auto;
+                grid-template-columns: 100%;
+                grid-template-rows: 500px 500px 500px 500px 500px;
+                grid-gap: 10px;
+                /* background-color: lightgrey; */
+                padding: 10px;
+                padding-top: 130px;
+
+                /* border: 5px solid rgba(0, 200, 0, 0.6); */
+                overflow: hidden;
+            }
+
+            .inner-grid-wide {
+                display: grid;
+                grid-template-columns: 100%;
+                /* background-color: lightskyblue; */
+
+                font-size: 300px;
+                text-align: center;
+                /* border: 5px solid rgba(0, 0, 200, 0.6); */
+                overflow: hidden;
+
+            }
+
+            .inner-grid-wide>div {
+                overflow: hidden;
+            }
+
+            .inner-grid-6-4 {
+                display: grid;
+                grid-template-columns: 59.5% 39.5%;
+                grid-column-gap: 1%;
+                /* background-color: lightskyblue; */
+
+                font-size: 300px;
+                text-align: center;
+
+                /* border: 5px solid rgba(0, 0, 200, 0.6); */
+                overflow: hidden;
+            }
+
+            .inner-grid-6-4>div {
+                overflow: hidden;
+            }
+
+            .inner-grid-2-2-8 {
+                display: grid;
+                grid-template-columns: 34.5% 64.5%;
+                grid-row: 49% 49%;
+                grid-gap: 1%;
+                /* background-color: lightskyblue; */
+
+                font-size: 160px;
+                text-align: center;
+
+                /* border: 5px solid rgba(0, 0, 200, 0.6); */
+                overflow: hidden;
+            }
+
+            .inner-grid-2-2-8>div {
+                overflow: hidden;
+            }
+
+            .inner-grid-5-5 {
+                display: grid;
+                grid-template-columns: 49.5% 49.5%;
+                grid-column-gap: 1%;
+                /* background-color: lightskyblue; */
+
+                font-size: 300px;
+                text-align: center;
+
+                /* border: 5px solid rgba(0, 0, 200, 0.6); */
+                overflow: hidden;
+            }
+
+            .inner-grid-5-5>div {
+                overflow: hidden;
+            }
+
+            .grid-item {
+                position: relative;
+                overflow: hidden;
+                height: 500px;
+            }
+
+            .grid-item-s {
+                position: relative;
+                overflow: hidden;
+                height: 250px;
+            }
+
+            .grid-item-wide {
+                width: 1200px;
+                /*图片宽度*/
+                position: absolute;
+                left: 50%;
+                margin-left: -600px;
+                /*图片宽度的一半*/
+            }
+
+            .grid-item-6 {
+                width: 714px;
+                position: absolute;
+                left: 50%;
+                margin-left: -357px;
+            }
+
+            .grid-item-4 {
+                width: 474px;
+                position: absolute;
+                left: 50%;
+                margin-left: -237px;
+            }
+
+            .grid-item-5 {
+                width: 594px;
+                position: absolute;
+                left: 50%;
+                margin-left: -297px;
+            }
+
+            .grid-item-8 {
+                width: 774px;
+                position: absolute;
+                left: 50%;
+                margin-left: -387px;
+            }
+
+            .grid-item-2 {
+                width: 414px;
+                position: absolute;
+                left: 50%;
+                margin-left: -207px;
+            }
+
+        }
+
+        /* pad narrow */
+        @media only screen and (min-width: 421px) and (max-width: 920px) {
+            .grid-container {
+                display: grid;
+                max-width: 1900px;
+                margin-left: auto;
+                margin-right: auto;
+                grid-template-columns: 100%;
+                grid-template-rows: 410px 410px 410px 410px 410px;
+                grid-gap: 7px;
+                /* background-color: lightgrey; */
+                padding: 7px;
+                padding-top: 130px;
+
+                /* border: 5px solid rgba(0, 200, 0, 0.6); */
+                overflow: hidden;
+            }
+
+            .inner-grid-wide {
+                display: grid;
+                grid-template-columns: 100%;
+                /* background-color: lightskyblue; */
+
+                font-size: 300px;
+                text-align: center;
+                /* border: 5px solid rgba(0, 0, 200, 0.6); */
+                overflow: hidden;
+
+            }
+
+            .inner-grid-wide>div {
+                overflow: hidden;
+            }
+
+            .inner-grid-6-4 {
+                display: grid;
+                grid-template-columns: 59.5% 39.5%;
+                grid-column-gap: 1%;
+                /* background-color: lightskyblue; */
+
+                font-size: 300px;
+                text-align: center;
+
+                /* border: 5px solid rgba(0, 0, 200, 0.6); */
+                overflow: hidden;
+            }
+
+            .inner-grid-6-4>div {
+                overflow: hidden;
+            }
+
+            .inner-grid-2-2-8 {
+                display: grid;
+                grid-template-columns: 34.5% 64.5%;
+                grid-row: 49% 49%;
+                grid-gap: 1%;
+                /* background-color: lightskyblue; */
+
+                font-size: 160px;
+                text-align: center;
+
+                /* border: 5px solid rgba(0, 0, 200, 0.6); */
+                overflow: hidden;
+            }
+
+            .inner-grid-2-2-8>div {
+                overflow: hidden;
+            }
+
+            .inner-grid-5-5 {
+                display: grid;
+                grid-template-columns: 49.5% 49.5%;
+                grid-column-gap: 1%;
+                /* background-color: lightskyblue; */
+
+                font-size: 300px;
+                text-align: center;
+
+                /* border: 5px solid rgba(0, 0, 200, 0.6); */
+                overflow: hidden;
+            }
+
+            .inner-grid-5-5>div {
+                overflow: hidden;
+            }
+
+            .grid-item {
+                position: relative;
+                overflow: hidden;
+                height: 410px;
+            }
+
+            .grid-item-s {
+                position: relative;
+                overflow: hidden;
+                height: 205px;
+            }
+
+            .grid-item-wide {
+                width: 920px;
+                /*图片宽度*/
+                position: absolute;
+                left: 50%;
+                margin-left: -460px;
+                /*图片宽度的一半*/
+            }
+
+            .grid-item-6 {
+                width: 548px;
+                position: absolute;
+                left: 50%;
+                margin-left: -274px;
+            }
+
+            .grid-item-4 {
+                width: 364px;
+                position: absolute;
+                left: 50%;
+                margin-left: -182px;
+            }
+
+            .grid-item-5 {
+                width: 456px;
+                position: absolute;
+                left: 50%;
+                margin-left: -228px;
+            }
+
+            .grid-item-8 {
+                width: 594px;
+                position: absolute;
+                left: 50%;
+                margin-left: -297px;
+            }
+
+            .grid-item-2 {
+                width: 318px;
+                position: absolute;
+                left: 50%;
+                margin-left: -159px;
+            }
+        }
+
+        /* phone */
+        @media only screen and (max-width: 420px) {
+            .grid-container {
+                display: grid;
+                max-width: 1900px;
+                margin-left: auto;
+                margin-right: auto;
+                grid-template-columns: 100%;
+                grid-template-rows: 200px 200px 200px 200px 200px;
+                grid-gap: 4px;
+                /* background-color: lightgrey; */
+                padding: 4px;
+                padding-top: 130px;
+
+                /* border: 5px solid rgba(0, 200, 0, 0.6); */
+                overflow: hidden;
+            }
+
+            .inner-grid-wide {
+                display: grid;
+                grid-template-columns: 100%;
+                /* background-color: lightskyblue; */
+
+                font-size: 300px;
+                text-align: center;
+                /* border: 5px solid rgba(0, 0, 200, 0.6); */
+                overflow: hidden;
+
+            }
+
+            .inner-grid-wide>div {
+                overflow: hidden;
+            }
+
+            .inner-grid-6-4 {
+                display: grid;
+                grid-template-columns: 59.5% 39.5%;
+                grid-column-gap: 1%;
+                /* background-color: lightskyblue; */
+
+                font-size: 300px;
+                text-align: center;
+
+                /* border: 5px solid rgba(0, 0, 200, 0.6); */
+                overflow: hidden;
+            }
+
+            .inner-grid-6-4>div {
+                overflow: hidden;
+            }
+
+            .inner-grid-2-2-8 {
+                display: grid;
+                grid-template-columns: 34.5% 64.5%;
+                grid-row: 49% 49%;
+                grid-gap: 1%;
+                /* background-color: lightskyblue; */
+
+                font-size: 160px;
+                text-align: center;
+
+                /* border: 5px solid rgba(0, 0, 200, 0.6); */
+                overflow: hidden;
+            }
+
+            .inner-grid-2-2-8>div {
+                overflow: hidden;
+            }
+
+            .inner-grid-5-5 {
+                display: grid;
+                grid-template-columns: 49.5% 49.5%;
+                grid-column-gap: 1%;
+                /* background-color: lightskyblue; */
+
+                font-size: 300px;
+                text-align: center;
+
+                /* border: 5px solid rgba(0, 0, 200, 0.6); */
+                overflow: hidden;
+            }
+
+            .inner-grid-5-5>div {
+                overflow: hidden;
+            }
+
+            .grid-item {
+                position: relative;
+                overflow: hidden;
+                height: 200px;
+            }
+
+            .grid-item-s {
+                position: relative;
+                overflow: hidden;
+                height: 100px;
+            }
+
+            .grid-item-wide {
+                width: 420px;
+                /*图片宽度*/
+                position: absolute;
+                left: 50%;
+                margin-left: -210px;
+                /*图片宽度的一半*/
+            }
+
+            .grid-item-6 {
+                width: 250px;
+                position: absolute;
+                left: 50%;
+                margin-left: -125px;
+            }
+
+            .grid-item-4 {
+                width: 166px;
+                position: absolute;
+                left: 50%;
+                margin-left: -83px;
+            }
+
+            .grid-item-5 {
+                width: 208px;
+                position: absolute;
+                left: 50%;
+                margin-left: -104px;
+            }
+
+            .grid-item-8 {
+                width: 271px;
+                position: absolute;
+                left: 50%;
+                margin-left: -136px;
+            }
+
+            .grid-item-2 {
+                width: 145px;
+                position: absolute;
+                left: 50%;
+                margin-left: -73px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+                <h1 class="nav-title">My Gallery</h1>
+                <a class="navbar-brand" href="https://zhiyu-wang.github.io/me/">
+                    <img src="pics\mySign.png" class="signature" alt="Zhiyu Wang">
+                </a>
+
+
+            </nav>
+
+        </header>
+
+        <content>
+            <div id="popLayer"></div>
+            <div class="grid-container">
+                <div class="inner-grid-wide">
+                    <div class="grid-item ">
+                        <!-- <a href="#" > -->
+                        <picture onclick="popBox('w-0001')">
+                            <source srcset="https://i.picsum.photos/id/1000/420/200.jpg" media="(max-width: 420px)">
+                            <source srcset="https://i.picsum.photos/id/1000/920/410.jpg" media="(max-width: 920px)">
+                            <source srcset="https://i.picsum.photos/id/1000/1200/500.jpg" media="(max-width: 1200px)">
+                            <img srcset="https://i.picsum.photos/id/1000/1920/600.jpg" class="grid-item-wide">
+                        </picture>
+                        <!-- </a> -->
+                        <div id="popBox-w-0001" class="popBox" onclick="closeBox('w-0001')">                            
+                            <div class="popBox-content">
+                                <img src="https://i.picsum.photos/id/1000/1920/600.jpg">
+                                <h4>popBox-w-0001</h4>
+                                <p>
+                                    thsi afa f the e dis qcuopqer aiao  of thae pic tiaera 
+                                    <a href="article.html" class="popBox-extend-content">-learn more-</a>
+                                </p>
+                                
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+                <div class=" inner-grid-6-4">
+                    <div class="grid-item">
+                        <!-- <a href="#"> -->
+                            <picture onclick="popBox('64-6001')">
+                                <source srcset="https://i.picsum.photos/id/1000/250/200.jpg" media="(max-width: 420px)">
+                                <source srcset="https://i.picsum.photos/id/1000/548/410.jpg" media="(max-width: 920px)">
+                                <source srcset="https://i.picsum.photos/id/1000/714/500.jpg"
+                                    media="(max-width: 1200px)">
+                                <img srcset="https://i.picsum.photos/id/1000/1143/600.jpg" class="grid-item-6">
+                            </picture>
+                            <div id="popBox-64-6001" class="popBox" onclick="closeBox('64-6001')">                            
+                                <div class="popBox-content">
+                                    <img src="https://i.picsum.photos/id/1000/1143/600.jpg">
+                                    <h4>popBox-64-6001</h4>
+                                    <p>
+                                        thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera 
+                                        <a href="article.html" class="popBox-extend-content">-learn more-</a>
+                                    </p>
+                                    
+                                </div>
+                            </div> 
+                        <!-- </a> -->
+                    </div>
+                    <div class="grid-item">
+                        <!-- <a href="#"> -->
+                        <picture onclick="popBox('64-4001')">
+                            <source srcset="https://i.picsum.photos/id/1000/166/200.jpg" media="(max-width: 420px)">
+                            <source srcset="https://i.picsum.photos/id/1000/364/410.jpg" media="(max-width: 920px)">
+                            <source srcset="https://i.picsum.photos/id/1000/474/500.jpg" media="(max-width: 1200px)">
+                            <img srcset=" https://i.picsum.photos/id/1000/758/600.jpg" class="grid-item-4">
+                        </picture>
+                        <div id="popBox-64-4001" class="popBox" onclick="closeBox('64-4001')">                            
+                            <div class="popBox-content">
+                                <img src="https://i.picsum.photos/id/1000/758/600.jpg">
+                                <h4> popBox-64-4001</h4>
+                                <p>
+                                    thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera 
+                                    <a href="article.html" class="popBox-extend-content">-learn more-</a>
+                                </p>
+                                
+                            </div>
+                        </div> 
+                        <!-- </a> -->
+                    </div>
+                </div>
+                <div class=" inner-grid-2-2-8">
+                    <div class="grid-item-s">
+                        <!-- <a href="#"> -->
+                        <picture onclick="popBox('228-2001')">
+                            <source srcset="https://i.picsum.photos/id/1000/145/100.jpg" media="(max-width: 420px)">
+                            <source srcset="https://i.picsum.photos/id/1000/318/205.jpg" media="(max-width: 920px)">
+                            <source srcset="https://i.picsum.photos/id/1000/414/250.jpg" media="(max-width: 1200px)">
+                            <img srcset="https://i.picsum.photos/id/1000/663/295.jpg" class="grid-item-2">
+                        </picture>
+                        <div id="popBox-228-2001" class="popBox" onclick="closeBox('228-2001')">                            
+                            <div class="popBox-content">
+                                <img src="https://i.picsum.photos/id/1000/1326/590.jpg">
+                                <h4> popBox-228-2001</h4>
+                                <p>
+                                    thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera 
+                                    <a href="article.html" class="popBox-extend-content">-learn more-</a>
+                                </p>                                
+                            </div>
+                        </div> 
+                    <!-- </a> -->
+
+
+                    </div>
+                    <div class="grid-item-s">
+                        <!-- <a href="#"> -->
+                        <picture onclick="popBox('228-2002')">
+                            <source srcset="https://i.picsum.photos/id/1000/145/100.jpg" media="(max-width: 420px)">
+                            <source srcset="https://i.picsum.photos/id/1000/318/205.jpg" media="(max-width: 920px)">
+                            <source srcset=" https://i.picsum.photos/id/1000/414/250.jpg" media="(max-width: 1200px)">
+                            <img srcset=" https://i.picsum.photos/id/1000/663/295.jpg" class="grid-item-2">
+                        </picture>
+                        <div id="popBox-228-2002" class="popBox" onclick="closeBox('228-2002')">                            
+                            <div class="popBox-content">
+                                <img src="https://i.picsum.photos/id/1000/1326/590.jpg">
+                                <h4> popBox-228-2002</h4>
+                                <p>
+                                    thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera 
+                                    <a href="article.html" class="popBox-extend-content">-learn more-</a>
+                                </p>                                
+                            </div>
+                        </div> 
+                    <!-- </a> -->
+                    </div>
+                    <div class="grid-item" style=" grid-row: 1/3; grid-column: 2/3">
+                        <!-- <a href="#"> -->
+                        <picture onclick="popBox('228-8001')">
+                            <source srcset="https://i.picsum.photos/id/1000/271/200.jpg" media="(max-width: 420px)">
+                            <source srcset="https://i.picsum.photos/id/1000/594/410.jpg" media="(max-width: 920px)">
+                            <source srcset="https://i.picsum.photos/id/1000/774/500.jpg" media="(max-width: 1200px)">
+                            <img srcset="https://i.picsum.photos/id/1000/1239/600.jpg" class="grid-item-8">
+                        </picture>
+                        <div id="popBox-228-8001" class="popBox" onclick="closeBox('228-8001')">                            
+                            <div class="popBox-content">
+                                <img src="https://i.picsum.photos/id/1000/1239/600.jpg">
+                                <h4> popBox-228-8001</h4>
+                                <p>
+                                    thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera 
+                                    <a href="article.html" class="popBox-extend-content">-learn more-</a>
+                                </p>                                
+                            </div>
+                        </div> 
+                    <!-- </a> -->
+                    </div>
+                </div>
+                <div class=" inner-grid-6-4">
+                    <div class="grid-item">
+                        <!-- <a href="#"> -->
+                            <picture onclick="popBox('64-6002')">
+                                <source srcset="https://i.picsum.photos/id/1000/250/200.jpg" media="(max-width: 420px)">
+                                <source srcset="https://i.picsum.photos/id/1000/548/410.jpg" media="(max-width: 920px)">
+                                <source srcset="https://i.picsum.photos/id/1000/714/500.jpg"
+                                    media="(max-width: 1200px)">
+                                <img srcset="https://i.picsum.photos/id/1000/1143/600.jpg" class="grid-item-6">
+                            </picture>
+                            <div id="popBox-64-6002" class="popBox" onclick="closeBox('64-6002')">                            
+                                <div class="popBox-content">
+                                    <img src="https://i.picsum.photos/id/1000/1143/600.jpg">
+                                    <h4> popBox-64-6002</h4>
+                                    <p>
+                                        thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera 
+                                        <a href="article.html" class="popBox-extend-content">-learn more-</a>
+                                    </p>
+                                    
+                                </div>
+                            </div> 
+                        <!-- </a> -->
+                    </div>
+                    <div class="grid-item">
+                        <!-- <a href="#"> -->
+                        <picture onclick="popBox('64-4002')">
+                            <source srcset="https://i.picsum.photos/id/1000/166/200.jpg" media="(max-width: 420px)">
+                            <source srcset="https://i.picsum.photos/id/1000/364/410.jpg" media="(max-width: 920px)">
+                            <source srcset="https://i.picsum.photos/id/1000/474/500.jpg" media="(max-width: 1200px)">
+                            <img srcset=" https://i.picsum.photos/id/1000/758/600.jpg" class="grid-item-4">
+                        </picture>
+                        <div id="popBox-64-4002" class="popBox" onclick="closeBox('64-4002')">                            
+                            <div class="popBox-content">
+                                <img src="https://i.picsum.photos/id/1000/758/600.jpg">
+                                <h4> popBox-64-4002</h4>
+                                <p>
+                                    thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera 
+                                    <a href="article.html" class="popBox-extend-content">-learn more-</a>
+                                </p>
+                                
+                            </div>
+                        </div> 
+                        <!-- </a> -->
+                    </div>
+                </div>
+                <div class=" inner-grid-5-5">
+                    <div class="grid-item">
+                        <!-- <a href="#"> -->
+                        <picture onclick="popBox('55-a001')">
+                            <source srcset="https://i.picsum.photos/id/1000/208/200.jpg" media="(max-width: 420px)">
+                            <source srcset="https://i.picsum.photos/id/1000/456/410.jpg" media="(max-width: 920px)">
+                            <source srcset="https://i.picsum.photos/id/1000/594/500.jpg" media="(max-width: 1200px)">
+                            <img srcset="https://i.picsum.photos/id/1000/951/600.jpg" class="grid-item-5">
+                        </picture>
+                        <div id="popBox-55-a001" class="popBox" onclick="closeBox('55-a001')">                            
+                            <div class="popBox-content">
+                                <img src="https://i.picsum.photos/id/1000/758/600.jpg">
+                                <h4> popBox-55-a001</h4>
+                                <p>
+                                    thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera 
+                                    <a href="article.html" class="popBox-extend-content">-learn more-</a>
+                                </p>
+                                
+                            </div>
+                        </div> 
+                    <!-- </a> -->
+
+                    </div>
+                    <div class="grid-item">
+                        <!-- <a href="#"> -->
+                            <picture onclick="popBox('55-b001')">
+                                <source srcset="https://i.picsum.photos/id/1000/208/200.jpg" media="(max-width: 420px)">
+                                <source srcset="https://i.picsum.photos/id/1000/456/410.jpg" media="(max-width: 920px)">
+                                <source srcset="https://i.picsum.photos/id/1000/594/500.jpg" media="(max-width: 1200px)">
+                                <img srcset="https://i.picsum.photos/id/1000/951/600.jpg" class="grid-item-5">
+                            </picture>
+                            <div id="popBox-55-b001" class="popBox" onclick="closeBox('55-b001')">                            
+                                <div class="popBox-content">
+                                    <img src="https://i.picsum.photos/id/1000/758/600.jpg">
+                                    <h4> popBox-55-b001</h4>
+                                    <p>
+                                        thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera 
+                                        <a href="article.html" class="popBox-extend-content">-learn more-</a>
+                                    </p>
+                                    
+                                </div>
+                            </div> 
+                    <!-- </a> -->
+
+                    </div>
+                </div>
+            </div>
+        </content>
+
+        <footer>
+            <div class=" jumbotron" style="margin-top: 100px; margin-bottom: 0px;">
+                <div class="footer-grid-container">
+                    <div class="footer-grid-brand">
+                        <img src="pics\mySign.png" , alt="Zhiyu Wang">
+                    </div>
+
+                    <div class="footer-grid-title-1">
+                        <h5>About</h5>
+                    </div>
+                    <div class="footer-grid-title-2">
+                        <h5>Discover</h5>
+                    </div>
+                    <div class="footer-grid-title-3">
+                        <h5>Contact</h5>
+                    </div>
+
+                    <div class="footer-grid-link-1"><a href="#">Introduction</a></div>
+                    <div class="footer-grid-link-2"><a href="#">Blog</a></div>
+                    <div class="footer-grid-link-3">
+                        <p style="color: rgb(60, 60, 60);">Email: wzy66618@outlook.com</p>
+                    </div>
+                    <div class="footer-grid-link-4"><a href="#">My goals</a></div>
+                    <div class="footer-grid-link-5"><a href="#">Community</a></div>
+                    <div class="footer-grid-link-6">
+                        <p style="color: rgb(60, 60, 60);">Ins: wangmichael327</p>
+                    </div>
+                    <div class="footer-grid-link-7"><a href="#">My achievements</a></div>
+                    <div class="footer-grid-link-8"><a href="#">Gallery</a></div>
+                    <div class="footer-grid-link-9">
+                        <p style="color: rgb(60, 60, 60);">WeChat: q2682186632</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script>
+        function popBox(id) {
+            var popBox = document.getElementById("popBox-" + id);
+            var popLayer = document.getElementById("popLayer");
+            popBox.style.display = "block";
+            popLayer.style.display = "block";
+
+        };
+
+        function closeBox(id) {
+            var popBox = document.getElementById("popBox-" + id);
+            var popLayer = document.getElementById("popLayer");
+            popBox.style.display = "none";
+            popLayer.style.display = "none";
+
+        }
+    </script>
+
+</body>
+
+</html>
