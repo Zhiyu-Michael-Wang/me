@@ -7,6 +7,8 @@ This is a set of templates for my future use of developing website. So far, in t
 
 2020.3.28: Completed all the static elements. Including navbar, footer, video, highlight section, article, and also the gallery grid. Created footer.css to fit all the footers for my templates, and base.css for many shared traits of all pages except homepage.
 
+2020.3.26: Add popbox onclick event for gallery items.
+
 2020.3.22: Made all the pages have responsive view that support all kinds of typical device in the market.
 
 2020.3.15: Created the gallery page.
