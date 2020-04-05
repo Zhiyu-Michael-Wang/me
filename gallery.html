@@ -217,6 +217,14 @@
                 height: 300px;
             }
 
+            .grid-item-lg {
+                position: relative;
+                overflow: hidden;
+                height: 600px;
+                grid-row: 1/3; 
+                grid-column: 2/3;
+            }
+
             .grid-item-wide {
                 width: 1920px;
                 /*图片宽度*/
@@ -359,6 +367,14 @@
                 position: relative;
                 overflow: hidden;
                 height: 250px;
+            }
+
+            .grid-item-lg {
+                position: relative;
+                overflow: hidden;
+                height: 500px;
+                grid-row: 1/3; 
+                grid-column: 2/3
             }
 
             .grid-item-wide {
@@ -505,6 +521,14 @@
                 height: 205px;
             }
 
+            .grid-item-lg {
+                position: relative;
+                overflow: hidden;
+                height: 410px;
+                grid-row: 1/3; 
+                grid-column: 2/3
+            }
+
             .grid-item-wide {
                 width: 920px;
                 /*图片宽度*/
@@ -648,6 +672,14 @@
                 height: 100px;
             }
 
+            .grid-item-lg {
+                position: relative;
+                overflow: hidden;
+                height: 200px;
+                grid-row: 1/3; 
+                grid-column: 2/3
+            }
+
             .grid-item-wide {
                 width: 420px;
                 /*图片宽度*/
@@ -703,238 +735,14 @@
                 <a class="navbar-brand" href="https://zhiyu-wang.github.io/me/">
                     <img src="pics\mySign.png" class="signature" alt="Zhiyu Wang">
                 </a>
-
-
             </nav>
 
         </header>
 
         <content>
             <div id="popLayer"></div>
-            <div class="grid-container">
-                <div class="inner-grid-wide">
-                    <div class="grid-item ">
-                        <!-- <a href="#" > -->
-                        <picture onclick="popBox('w-0001')">
-                            <source srcset="https://i.picsum.photos/id/1000/420/200.jpg" media="(max-width: 420px)">
-                            <source srcset="https://i.picsum.photos/id/1000/920/410.jpg" media="(max-width: 920px)">
-                            <source srcset="https://i.picsum.photos/id/1000/1200/500.jpg" media="(max-width: 1200px)">
-                            <img srcset="https://i.picsum.photos/id/1000/1920/600.jpg" class="grid-item-wide">
-                        </picture>
-                        <!-- </a> -->
-                        <div id="popBox-w-0001" class="popBox" onclick="closeBox('w-0001')">                            
-                            <div class="popBox-content">
-                                <img src="https://i.picsum.photos/id/1000/1920/600.jpg">
-                                <h4>popBox-w-0001</h4>
-                                <p>
-                                    thsi afa f the e dis qcuopqer aiao  of thae pic tiaera 
-                                    <a href="article.html" class="popBox-extend-content">-learn more-</a>
-                                </p>
-                                
-                            </div>
-                        </div>                        
-                    </div>
-                </div>
-                <div class=" inner-grid-6-4">
-                    <div class="grid-item">
-                        <!-- <a href="#"> -->
-                            <picture onclick="popBox('64-6001')">
-                                <source srcset="https://i.picsum.photos/id/1000/250/200.jpg" media="(max-width: 420px)">
-                                <source srcset="https://i.picsum.photos/id/1000/548/410.jpg" media="(max-width: 920px)">
-                                <source srcset="https://i.picsum.photos/id/1000/714/500.jpg"
-                                    media="(max-width: 1200px)">
-                                <img srcset="https://i.picsum.photos/id/1000/1143/600.jpg" class="grid-item-6">
-                            </picture>
-                            <div id="popBox-64-6001" class="popBox" onclick="closeBox('64-6001')">                            
-                                <div class="popBox-content">
-                                    <img src="https://i.picsum.photos/id/1000/1143/600.jpg">
-                                    <h4>popBox-64-6001</h4>
-                                    <p>
-                                        thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera 
-                                        <a href="article.html" class="popBox-extend-content">-learn more-</a>
-                                    </p>
-                                    
-                                </div>
-                            </div> 
-                        <!-- </a> -->
-                    </div>
-                    <div class="grid-item">
-                        <!-- <a href="#"> -->
-                        <picture onclick="popBox('64-4001')">
-                            <source srcset="https://i.picsum.photos/id/1000/166/200.jpg" media="(max-width: 420px)">
-                            <source srcset="https://i.picsum.photos/id/1000/364/410.jpg" media="(max-width: 920px)">
-                            <source srcset="https://i.picsum.photos/id/1000/474/500.jpg" media="(max-width: 1200px)">
-                            <img srcset=" https://i.picsum.photos/id/1000/758/600.jpg" class="grid-item-4">
-                        </picture>
-                        <div id="popBox-64-4001" class="popBox" onclick="closeBox('64-4001')">                            
-                            <div class="popBox-content">
-                                <img src="https://i.picsum.photos/id/1000/758/600.jpg">
-                                <h4> popBox-64-4001</h4>
-                                <p>
-                                    thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera 
-                                    <a href="article.html" class="popBox-extend-content">-learn more-</a>
-                                </p>
-                                
-                            </div>
-                        </div> 
-                        <!-- </a> -->
-                    </div>
-                </div>
-                <div class=" inner-grid-2-2-8">
-                    <div class="grid-item-s">
-                        <!-- <a href="#"> -->
-                        <picture onclick="popBox('228-2001')">
-                            <source srcset="https://i.picsum.photos/id/1000/145/100.jpg" media="(max-width: 420px)">
-                            <source srcset="https://i.picsum.photos/id/1000/318/205.jpg" media="(max-width: 920px)">
-                            <source srcset="https://i.picsum.photos/id/1000/414/250.jpg" media="(max-width: 1200px)">
-                            <img srcset="https://i.picsum.photos/id/1000/663/295.jpg" class="grid-item-2">
-                        </picture>
-                        <div id="popBox-228-2001" class="popBox" onclick="closeBox('228-2001')">                            
-                            <div class="popBox-content">
-                                <img src="https://i.picsum.photos/id/1000/1143/600.jpg">
-                                <h4> popBox-228-2001</h4>
-                                <p>
-                                    thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera 
-                                    <a href="article.html" class="popBox-extend-content">-learn more-</a>
-                                </p>                                
-                            </div>
-                        </div> 
-                    <!-- </a> -->
-
-
-                    </div>
-                    <div class="grid-item-s">
-                        <!-- <a href="#"> -->
-                        <picture onclick="popBox('228-2002')">
-                            <source srcset="https://i.picsum.photos/id/1000/145/100.jpg" media="(max-width: 420px)">
-                            <source srcset="https://i.picsum.photos/id/1000/318/205.jpg" media="(max-width: 920px)">
-                            <source srcset=" https://i.picsum.photos/id/1000/414/250.jpg" media="(max-width: 1200px)">
-                            <img srcset=" https://i.picsum.photos/id/1000/663/295.jpg" class="grid-item-2">
-                        </picture>
-                        <div id="popBox-228-2002" class="popBox" onclick="closeBox('228-2002')">                            
-                            <div class="popBox-content">
-                                <img src="https://i.picsum.photos/id/1000/1326/590.jpg">
-                                <h4> popBox-228-2002</h4>
-                                <p>
-                                    thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera 
-                                    <a href="article.html" class="popBox-extend-content">-learn more-</a>
-                                </p>                                
-                            </div>
-                        </div> 
-                    <!-- </a> -->
-                    </div>
-                    <div class="grid-item" style=" grid-row: 1/3; grid-column: 2/3">
-                        <!-- <a href="#"> -->
-                        <picture onclick="popBox('228-8001')">
-                            <source srcset="https://i.picsum.photos/id/1000/271/200.jpg" media="(max-width: 420px)">
-                            <source srcset="https://i.picsum.photos/id/1000/594/410.jpg" media="(max-width: 920px)">
-                            <source srcset="https://i.picsum.photos/id/1000/774/500.jpg" media="(max-width: 1200px)">
-                            <img srcset="https://i.picsum.photos/id/1000/1239/600.jpg" class="grid-item-8">
-                        </picture>
-                        <div id="popBox-228-8001" class="popBox" onclick="closeBox('228-8001')">                            
-                            <div class="popBox-content">
-                                <img src="https://i.picsum.photos/id/1000/1239/600.jpg">
-                                <h4> popBox-228-8001</h4>
-                                <p>
-                                    thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera 
-                                    <a href="article.html" class="popBox-extend-content">-learn more-</a>
-                                </p>                                
-                            </div>
-                        </div> 
-                    <!-- </a> -->
-                    </div>
-                </div>
-                <div class=" inner-grid-6-4">
-                    <div class="grid-item">
-                        <!-- <a href="#"> -->
-                            <picture onclick="popBox('64-6002')">
-                                <source srcset="https://i.picsum.photos/id/1000/250/200.jpg" media="(max-width: 420px)">
-                                <source srcset="https://i.picsum.photos/id/1000/548/410.jpg" media="(max-width: 920px)">
-                                <source srcset="https://i.picsum.photos/id/1000/714/500.jpg"
-                                    media="(max-width: 1200px)">
-                                <img srcset="https://i.picsum.photos/id/1000/1143/600.jpg" class="grid-item-6">
-                            </picture>
-                            <div id="popBox-64-6002" class="popBox" onclick="closeBox('64-6002')">                            
-                                <div class="popBox-content">
-                                    <img src="https://i.picsum.photos/id/1000/1143/600.jpg">
-                                    <h4> popBox-64-6002</h4>
-                                    <p>
-                                        thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera 
-                                        <a href="article.html" class="popBox-extend-content">-learn more-</a>
-                                    </p>
-                                    
-                                </div>
-                            </div> 
-                        <!-- </a> -->
-                    </div>
-                    <div class="grid-item">
-                        <!-- <a href="#"> -->
-                        <picture onclick="popBox('64-4002')">
-                            <source srcset="https://i.picsum.photos/id/1000/166/200.jpg" media="(max-width: 420px)">
-                            <source srcset="https://i.picsum.photos/id/1000/364/410.jpg" media="(max-width: 920px)">
-                            <source srcset="https://i.picsum.photos/id/1000/474/500.jpg" media="(max-width: 1200px)">
-                            <img srcset=" https://i.picsum.photos/id/1000/758/600.jpg" class="grid-item-4">
-                        </picture>
-                        <div id="popBox-64-4002" class="popBox" onclick="closeBox('64-4002')">                            
-                            <div class="popBox-content">
-                                <img src="https://i.picsum.photos/id/1000/758/600.jpg">
-                                <h4> popBox-64-4002</h4>
-                                <p>
-                                    thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera 
-                                    <a href="article.html" class="popBox-extend-content">-learn more-</a>
-                                </p>
-                                
-                            </div>
-                        </div> 
-                        <!-- </a> -->
-                    </div>
-                </div>
-                <div class=" inner-grid-5-5">
-                    <div class="grid-item">
-                        <!-- <a href="#"> -->
-                        <picture onclick="popBox('55-a001')">
-                            <source srcset="https://i.picsum.photos/id/1000/208/200.jpg" media="(max-width: 420px)">
-                            <source srcset="https://i.picsum.photos/id/1000/456/410.jpg" media="(max-width: 920px)">
-                            <source srcset="https://i.picsum.photos/id/1000/594/500.jpg" media="(max-width: 1200px)">
-                            <img srcset="https://i.picsum.photos/id/1000/951/600.jpg" class="grid-item-5">
-                        </picture>
-                        <div id="popBox-55-a001" class="popBox" onclick="closeBox('55-a001')">                            
-                            <div class="popBox-content">
-                                <img src="https://i.picsum.photos/id/1000/758/600.jpg">
-                                <h4> popBox-55-a001</h4>
-                                <p>
-                                    thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera 
-                                    <a href="article.html" class="popBox-extend-content">-learn more-</a>
-                                </p>
-                                
-                            </div>
-                        </div> 
-                    <!-- </a> -->
-
-                    </div>
-                    <div class="grid-item">
-                        <!-- <a href="#"> -->
-                            <picture onclick="popBox('55-b001')">
-                                <source srcset="https://i.picsum.photos/id/1000/208/200.jpg" media="(max-width: 420px)">
-                                <source srcset="https://i.picsum.photos/id/1000/456/410.jpg" media="(max-width: 920px)">
-                                <source srcset="https://i.picsum.photos/id/1000/594/500.jpg" media="(max-width: 1200px)">
-                                <img srcset="https://i.picsum.photos/id/1000/951/600.jpg" class="grid-item-5">
-                            </picture>
-                            <div id="popBox-55-b001" class="popBox" onclick="closeBox('55-b001')">                            
-                                <div class="popBox-content">
-                                    <img src="https://i.picsum.photos/id/1000/758/600.jpg">
-                                    <h4> popBox-55-b001</h4>
-                                    <p>
-                                        thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera 
-                                        <a href="article.html" class="popBox-extend-content">-learn more-</a>
-                                    </p>
-                                    
-                                </div>
-                            </div> 
-                    <!-- </a> -->
-
-                    </div>
-                </div>
+            <div class="grid-container" id="grid-section">
+                
             </div>
         </content>
 
@@ -997,7 +805,7 @@
 
         }
     </script>
-
+    <script type="text/javascript" src="js\gallery.js"></script>
 </body>
 
 </html>
