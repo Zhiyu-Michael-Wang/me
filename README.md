@@ -3,9 +3,9 @@ This is a set of templates for my future use of developing website. So far, in t
 
 
 # log
-2020.4.5: Converted the static html grid items in the gallery into js objects, and write a js code to append those objects into gallery.html.
+2020.4.5: Converted the static html grid items in the gallery into js objects, and write a js code to append those objects into gallery.html. 
 
-2020.3.28: Completed all the static elements. Including navbar, footer, video, highlight section, article, and also the gallery grid.
+2020.3.28: Completed all the static elements. Including navbar, footer, video, highlight section, article, and also the gallery grid. Created footer.css to fit all the footers for my templates, and base.css for many shared traits of all pages except homepage.
 
 2020.3.22: Made all the pages have responsive view that support all kinds of typical device in the market.
 
