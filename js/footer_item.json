@@ -1,0 +1,25 @@
+{
+    "brand": "pics\\mySign.png",
+    "title_left": "About",
+    "title_mid": "Discover",
+    "title_right": "Contact",
+
+    "row_left": [
+        "links",
+        "Introduction",
+        "My goals",
+        "My achievements"
+    ],
+    "row_mid": [
+        "links",
+        "Blog",
+        "Community",
+        "Gallery"
+    ],
+    "row_right": [
+        "texts",
+        "Email: wzy66618@outlook.com",
+        "Ins: wangmichael327",
+        "WeChat: q2682186632"
+    ]
+}

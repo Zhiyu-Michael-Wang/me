@@ -1,250 +1,69 @@
-var galleryItems = [
-    {
-        id: 'w01',
-        type: 'inner-grid-wide',
-        items: [
-            {
-                id: 'w01-w',
-                type: 'grid-item',
-                subtype: 'grid-item-wide',
-                img: {
-                    xs: 'https://i.picsum.photos/id/1000/420/200.jpg',
-                    s: 'https://i.picsum.photos/id/1000/920/410.jpg',
-                    m: 'https://i.picsum.photos/id/1000/1200/500.jpg',
-                    lg: 'https://i.picsum.photos/id/1000/1920/600.jpg'
-                },
-                content: {
-                    img: 'https://i.picsum.photos/id/1000/1920/600.jpg',
-                    title: 'popbox-w01-w',
-                    text: 'thsi afa f the e dis qcuopqer aiao  of thae pic tiaera',
-                    link: 'article.html'
+var galleryItems = null;
+
+$(document).ready(function () {
+    $.ajax({
+        url: 'js\\gallery_item.json',
+        async: false,
+        success: function (data) {
+            galleryItems = data;
+            console.log(galleryItems)
+
+            var gridItemTarget = $('#grid-section')
+
+            for (ii = 0; ii < galleryItems.length; ii++) {
+                var it = galleryItems[ii]
+                
+                var grid_id = it.id
+                var grid_type = it.type
+                var grid_items = it.items
+
+                var renderGrid = '<div class="' + grid_type + '">'
+                for (jj = 0; jj < grid_items.length; jj++) {
+                    var item = grid_items[jj]
+                    var item_id = item.id
+                    var item_type = item.type
+                    var item_subtype = item.subtype
+                    var item_img = item.img
+                    var item_content = item.content
+
+                    var renderPicture = 
+                    '<picture onclick="popBox(\'' + item_id + '\')">' + 
+                        '<source srcset="' + item_img.xs + '"media="(max-width: 420px)">' +
+                        '<source srcset="' + item_img.s + '"media="(max-width: 920px)">' +
+                        '<source srcset="' + item_img.m + '"media="(max-width: 1200px)">' +
+                        '<img srcset="' + item_img.lg + '"class="' + item_subtype + '">' +
+                    '</picture>'
+
+                    var renderPopbox = 
+                    '<div id="popBox-' + item_id + '"class="popBox" onclick="closeBox(\'' + item_id + '\')">' +                            
+                        '<div class="popBox-content">' +
+                            '<img src="' + item_content.img + '">' +
+                            '<h4> ' + item_content.title + '</h4>' +
+                            '<p>' + 
+                                item_content.text + 
+                                '<a href="' + item_content.link + '" class="popBox-extend-content">-learn more-</a>' +
+                            '</p>' +                    
+                        '</div>' +                
+                    '</div>'
+
+                    var renderItem = 
+                    '<div class="' + item_type + '">' + 
+                        renderPicture +
+                        renderPopbox +
+                    '</div>'
+
+                    renderGrid += renderItem
                 }
+                renderGrid += '</div>'
+                
+                gridItemTarget.append(renderGrid)
             }
-        ]
-    },{
-        id: '6401',
-        type: 'inner-grid-6-4',
-        items: [
-            {
-                id: '6401-6',
-                type: 'grid-item',
-                subtype: 'grid-item-6',
-                img: {
-                    xs: 'https://i.picsum.photos/id/1000/250/200.jpg',
-                    s: 'https://i.picsum.photos/id/1000/548/410.jpg',
-                    m: 'https://i.picsum.photos/id/1000/714/500.jpg',
-                    lg: 'https://i.picsum.photos/id/1000/1143/600.jpg'
-                },
-                content: {
-                    img: 'https://i.picsum.photos/id/1000/1143/600.jpg',
-                    title: 'popBox-6401-6',
-                    text: 'thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera',
-                    link: 'article.html'               
-                },
-            },{
-                id: '6401-4',
-                type: 'grid-item',
-                subtype: 'grid-item-4',
-                img: {
-                    xs:'https://i.picsum.photos/id/1000/166/200.jpg',
-                    s: 'https://i.picsum.photos/id/1000/364/410.jpg',
-                    m: 'https://i.picsum.photos/id/1000/474/500.jpg',
-                    lg: 'https://i.picsum.photos/id/1000/758/600.jpg'
-                },
-                content: {
-                    img: 'https://i.picsum.photos/id/1000/758/600.jpg',
-                    title: 'popBox-6401-4',
-                    text: 'thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera',
-                    link: 'article.html'
-                }
-            }        
-        ]
-    },{
-        id: '22801',
-        type: 'inner-grid-2-2-8',
-        items: [
-            {
-                id: '22801-2a',
-                type: 'grid-item-s',
-                subtype: 'grid-item-2',
-                img: {
-                    xs: 'https://i.picsum.photos/id/1000/145/100.jpg',
-                    s: 'https://i.picsum.photos/id/1000/318/205.jpg',
-                    m: 'https://i.picsum.photos/id/1000/414/250.jpg',
-                    lg: 'https://i.picsum.photos/id/1000/663/295.jpg'
-                },
-                content: {
-                    img: 'https://i.picsum.photos/id/1000/1143/600.jpg',
-                    title: 'popBox-22801-2a',
-                    text: 'thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera',
-                    link: 'article.html'               
-                },
-            },{
-                id: '22801-2b',
-                type: 'grid-item-s',
-                subtype: 'grid-item-2',
-                img: {
-                    xs: 'https://i.picsum.photos/id/1000/145/100.jpg',
-                    s: 'https://i.picsum.photos/id/1000/318/205.jpg',
-                    m: 'https://i.picsum.photos/id/1000/414/250.jpg',
-                    lg: 'https://i.picsum.photos/id/1000/663/295.jpg'
-                },
-                content: {
-                    img: 'https://i.picsum.photos/id/1000/1143/600.jpg',
-                    title: 'popBox-22801-2b',
-                    text: 'thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera',
-                    link: 'article.html'               
-                },
-            },{
-                id: '22801-8',
-                type: 'grid-item-lg',
-                subtype: 'grid-item-8',
-                img: {
-                    xs: 'https://i.picsum.photos/id/1000/271/200.jpg',
-                    s: 'https://i.picsum.photos/id/1000/594/410.jpg',
-                    m: 'https://i.picsum.photos/id/1000/774/500.jpg',
-                    lg: 'https://i.picsum.photos/id/1000/1239/600.jpg'
-                },
-                content: {
-                    img: 'https://i.picsum.photos/id/1000/1239/600.jpg',
-                    title: 'popBox-22801-8',
-                    text: 'thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera',
-                    link: 'article.html'               
-                },
-            }        
-        ]
-    },{
-        id: '6402',
-        type: 'inner-grid-6-4',
-        items: [
-            {
-                id: '6402-6',
-                type: 'grid-item',
-                subtype: 'grid-item-6',
-                img: {
-                    xs: 'https://i.picsum.photos/id/1000/250/200.jpg',
-                    s: 'https://i.picsum.photos/id/1000/548/410.jpg',
-                    m: 'https://i.picsum.photos/id/1000/714/500.jpg',
-                    lg: 'https://i.picsum.photos/id/1000/1143/600.jpg'
-                },
-                content: {
-                    img: 'https://i.picsum.photos/id/1000/1143/600.jpg',
-                    title: 'popBox-6402-6',
-                    text: 'thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera',
-                    link: 'article.html'               
-                },
-            },{
-                id: '6402-4',
-                type: 'grid-item',
-                subtype: 'grid-item-4',
-                img: {
-                    xs:'https://i.picsum.photos/id/1000/166/200.jpg',
-                    s: 'https://i.picsum.photos/id/1000/364/410.jpg',
-                    m: 'https://i.picsum.photos/id/1000/474/500.jpg',
-                    lg: 'https://i.picsum.photos/id/1000/758/600.jpg'
-                },
-                content: {
-                    img: 'https://i.picsum.photos/id/1000/758/600.jpg',
-                    title: 'popBox-6402-4',
-                    text: 'thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera',
-                    link: 'article.html'
-                }
-            }        
-        ]
-    },{
-        id: '5501',
-        type: 'inner-grid-5-5',
-        items: [
-            {
-                id: '5501-5a',
-                type: 'grid-item',
-                subtype: 'grid-item-5',
-                img: {
-                    xs: 'https://i.picsum.photos/id/1000/208/200.jpg',
-                    s: 'https://i.picsum.photos/id/1000/456/410.jpg',
-                    m: 'https://i.picsum.photos/id/1000/594/500.jpg',
-                    lg: 'https://i.picsum.photos/id/1000/951/600.jpg'
-                },
-                content: {
-                    img: 'https://i.picsum.photos/id/1000/951/600.jpg',
-                    title: 'popBox-5501-5a',
-                    text: 'thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera',
-                    link: 'article.html'               
-                },
-            },{
-                id: '5501-5b',
-                type: 'grid-item',
-                subtype: 'grid-item-5',
-                img: {
-                    xs: 'https://i.picsum.photos/id/1000/208/200.jpg',
-                    s: 'https://i.picsum.photos/id/1000/456/410.jpg',
-                    m: 'https://i.picsum.photos/id/1000/594/500.jpg',
-                    lg: 'https://i.picsum.photos/id/1000/951/600.jpg'
-                },
-                content: {
-                    img: 'https://i.picsum.photos/id/1000/951/600.jpg',
-                    title: 'popBox-5501-5b',
-                    text: 'thsfhaufoa fiso sioo 0aa0i ss aiao  of thae pic tiaera',
-                    link: 'article.html'
-                }
-            }        
-        ]
-    },
-]
+        }
+    });
+});
 
 
 
-
-var gridItemTarget = $('#grid-section')
-
-for (ii = 0; ii < galleryItems.length; ii++) {
-    var it = galleryItems[ii]
-    
-    var grid_id = it.id
-    var grid_type = it.type
-    var grid_items = it.items
-
-    var renderGrid = '<div class="' + grid_type + '">'
-    for (jj = 0; jj < grid_items.length; jj++) {
-        var item = grid_items[jj]
-        var item_id = item.id
-        var item_type = item.type
-        var item_subtype = item.subtype
-        var item_img = item.img
-        var item_content = item.content
-
-        var renderPicture = 
-        '<picture onclick="popBox(\'' + item_id + '\')">' + 
-            '<source srcset="' + item_img.xs + '"media="(max-width: 420px)">' +
-            '<source srcset="' + item_img.s + '"media="(max-width: 920px)">' +
-            '<source srcset="' + item_img.m + '"media="(max-width: 1200px)">' +
-            '<img srcset="' + item_img.lg + '"class="' + item_subtype + '">' +
-        '</picture>'
-
-        var renderPopbox = 
-        '<div id="popBox-' + item_id + '"class="popBox" onclick="closeBox(\'' + item_id + '\')">' +                            
-            '<div class="popBox-content">' +
-                '<img src="' + item_content.img + '">' +
-                '<h4> ' + item_content.title + '</h4>' +
-                '<p>' + 
-                    item_content.text + 
-                    '<a href="' + item_content.link + '" class="popBox-extend-content">-learn more-</a>' +
-                '</p>' +                    
-            '</div>' +                
-        '</div>'
-
-        var renderItem = 
-        '<div class="' + item_type + '">' + 
-            renderPicture +
-            renderPopbox +
-        '</div>'
-
-        renderGrid += renderItem
-    }
-    renderGrid += '</div>'
-    
-    gridItemTarget.append(renderGrid)
-   }
 
 /** sample of inner grid wide
  * <div class="inner-grid-wide">
